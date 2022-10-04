@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MainTest {
 
     @Test
-    public void getAllstudents(){
+    public void getAllstudentsTest(){
         //given
         Student student1 = new Student();
         student1.id = 789;
