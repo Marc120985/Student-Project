@@ -1,25 +1,33 @@
+import org.junit.jupiter.api.Test;
+
 import java.util.HashMap;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
 
-    public static void main(String[] args) {
-            Student student = new Student();
-            student.id = 1234;
-            student.name = "Marc";
-            Student student1 = new Student();
-            student1.id = 12345;
-            student1.name = "Christian";
+    @Test
+    public void getAllstudents(){
+        //given
+        Student student1 = new Student();
+        student1.id = 789;
+        student1.name="Alf";
+        Student student2 = new Student();
+        student2.id = 6789;
+        student2.name = "Schnellball";
+        HashMap<String, Student> testhas = new HashMap<>();
+        testhas.put("002", student1);
+        testhas.put("004", student2);
+        StudentDB studentDB = new StudentDB(testhas);
 
-//        System.out.println("Das ist " + student);
-//        System.out.println("Das ist " + student1);
+        //when
+        HashMap<String, Student> actual = studentDB.getAllStudents();
 
-        HashMap<String, Student> studentHashMap = new HashMap<>();
-        studentHashMap.put("001",student);
-        studentHashMap.put("002",student1);
-
-        StudentDB studentDB = new StudentDB(studentHashMap);
+        //then
+        HashMap<String, Student> expected = new HashMap<>();
+        expected.put("002", student1);
+        expected.put("004",student2);
+        assertEquals(expected,actual);
 
     }
 

@@ -2,8 +2,13 @@ import java.util.HashMap;
 
 public class StudentDB {
 
-    HashMap<String, Student> studentHashMap;
+    HashMap<String, Student> studentHashMapDb;
     public StudentDB(HashMap<String,Student> studentHashMap) {
-        this.studentHashMap = studentHashMap;
+        studentHashMapDb = studentHashMap;
+    }
+
+
+    public HashMap<String,Student> getAllStudents() {
+        return studentHashMapDb;
     }
 }
