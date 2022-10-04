@@ -1,3 +1,4 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.NoSuchElementException;
 
@@ -27,10 +28,10 @@ public class StudentDB {
 //        }throw new NoSuchElementException("Kein Stundent unter der ID gefunden");
 //    }
 
-    public HashMap<String, Student> findByID2(int id2) {
-              if (studentHashMapDb.containsValue(id2)) {
+    public HashMap<String, Student> findByID2(String id2) {
+              if (studentHashMapDb.containsKey(id2)) {
                   return studentHashMapDb;
-              }throw new NoSuchElementException();
+              }throw new NoSuchElementException("No ID found");
         }
 
 

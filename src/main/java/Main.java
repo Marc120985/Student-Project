@@ -20,7 +20,7 @@ public class Main {
 
 //        System.out.println(studentDB.getAllStudents());
 //        System.out.println(studentDB.randomStudent());
-        System.out.println(studentDB.findByID2(12345));
+        System.out.println(studentDB.findByID2("002"));
 
     }
 }
